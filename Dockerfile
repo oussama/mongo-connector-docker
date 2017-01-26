@@ -1,9 +1,8 @@
 FROM python:3.4
-MAINTAINER Hibou Corp. <hello@hibou.io>
+MAINTAINER oussama@github
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV TZ UTC
-RUN pip install mongo-connector==2.3 elastic-doc-manager elastic2-doc-manager
+RUN pip install mongo-connector==2.5 elastic-doc-manager 'elastic2-doc-manager[elastic5]'
 
 RUN mkdir /conf && mkdir /var/log/mongo-connector
 COPY ./config.json /conf/
